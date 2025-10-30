@@ -8,9 +8,9 @@ pipeline {
             steps {
                 script {
                     if (params.ENV == 'prod') {
-                        load 'Jenkinsfile-prod'
+                        load 'Jenkinsfile-prod.groovy'
                     } else {
-                        load 'Jenkinsfile-dev'
+                        load 'Jenkinsfile-dev.groovy'
                     }
                 }
             }

@@ -7,11 +7,9 @@ pipeline {
         stage('Select File') {
             steps {
                 script {
-                    if (params.ENV == 'prod') {
-                        load 'Jenkinsfile-prod.groovy'
-                    } else {
-                        load 'Jenkinsfile-dev.groovy'
-                    }
+                    def scriptFile = params.ENV == 'prod' ? 'Jenkinsfile-prod.groovy' : 'Jenkinsfile-dev.groovy'
+                    echo "Loading ${scriptFile}"
+                    load scriptFile
                 }
             }
         }

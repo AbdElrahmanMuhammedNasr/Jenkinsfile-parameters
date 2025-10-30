@@ -1,4 +1,8 @@
- 
-
-        stage('Build') { steps { echo 'Building DEV...' } }
-        stage('Deploy') { steps { echo 'Deploying to DEV...' } }
+node('agent2') {
+    stage('Build') {
+        echo 'Building DEV...'
+    }
+    stage('Deploy') {
+        echo 'Deploying to DEV...'
+    }
+}

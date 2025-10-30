@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'agent2'}
     parameters {
         choice(name: 'ENV', choices: ['dev', 'prod'], description: 'Choose environment')
     }
